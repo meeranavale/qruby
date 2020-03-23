@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  resource :qr_code_scanners, only: [] do
+    collection do
+      get :read_qr
+      post :read_qr_code
+      get :create_qr
+      post :create_qr_code
+    end
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
