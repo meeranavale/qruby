@@ -1,0 +1,17 @@
+<div class='container'>
+    <%= form_tag "/qr_code_scanners/create_qr_code" do %>
+        <div class= "row">
+            <div class= "col-md-6 text-center">
+                <div class='form-group'>
+                    <%= label_tag 'data', 'Generate QR code' %>
+                    <%= text_field_tag 'data', nil, class: 'form-control' %>
+                </div>
+            </div>
+        </div>
+        <div class= "row">
+            <div class= "col-md-6 text-center">
+             <%= submit_tag 'Generate Code', class: 'btn btn-primary' %>
+            </div>
+        </div>
+    <% end %>
+</div>
