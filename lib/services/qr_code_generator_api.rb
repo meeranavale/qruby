@@ -17,9 +17,9 @@ class Services::QrCodeGeneratorApi
         response = HTTP.post(url, :form => {
             file: HTTP::FormData::File.new(file.tempfile.path)
         })
+
         if response.status == 200
-            body = JSON.parse(response.to_json)['body'][0]
-            JSON.parse(body)[0]['symbol'][0]['data']
+            JSON.parse(response.body)[0]['symbol'][0]['data']
         end
     end
 end
